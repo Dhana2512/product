@@ -1,0 +1,30 @@
+<div class="row d-flex justify-content-center align-items-center pt-4">
+    <div class="col-4 ">
+        <form #productForm ="ngForm" (ngSubmit)="create()">
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Name</label>
+                <input type="text" class="form-control" name="name" [(ngModel)]="data.name" id="exampleFormControlInput1" required>
+                <!-- <span *ngIf="name.touched && name.invalid" style="color:red;">Please fill the Name</span> -->
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Image</label>
+                <input type="file" class="form-control"  name="image" [(ngModel)]="data.image" id="exampleFormControlInput1">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Price</label>
+                <input type="number" class="form-control" name="Price" [(ngModel)]="data.price" id="exampleFormControlInput1" required>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Availability Status</label>
+                <input type="text" class="form-control"  name="availstatus" [(ngModel)]="data.availstatus" id="exampleFormControlInput1">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+                <textarea class="form-control"  name="description" [(ngModel)]="data.description" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+            <div class="d-flex justify-content-center align-items-center pt-2">
+                <button [disabled]="productForm.invalid" type="submit" class="btn btn-primary">submit</button>
+            </div>
+        </form>
+    </div>
+</div>

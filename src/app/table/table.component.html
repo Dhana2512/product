@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="p-4">
+      <button routerLink="/form" class="btn-success d-block float-right"><img src="https://icons.getbootstrap.com/icons/plus-circle.svg" />
+      </button>
+      </div>
+     <div class="pt-4">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Image</th>
+            <th scope="col">Price</th>
+            <th scope="col">Availability Status</th>
+            <th scope="col">Description</th>
+            <th scope="col">Delete</th>
+            <th scope="col">Update</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr scope="row" *ngFor = "let user of customers; let i = index">
+            <td>{{user.name}}</td>
+            <td>{{user.image}}</td>
+            <td>{{user.price}}</td>
+            <td>{{user.availstatus}}</td>
+            <td>{{user.description}}</td>
+            <td><button (click)="delete(user.id, i)" class="btn-danger" ><img src="https://icons.getbootstrap.com/icons/trash-fill.svg" /></button></td>
+            <td><button type="button" (click)="update(user.id)" class="btn-primary" ><img src="https://icons.getbootstrap.com/icons/pencil-square.svg">
+            </button></td>
+          </tr>
+              </tbody>
+      </table>
+     </div>
+  </div>
+  
